@@ -4,12 +4,14 @@
 .NOTPARALLEL: ;          # wait for target to finish
 .EXPORT_ALL_VARIABLES: ; # send all vars to shell
 
+export GO111MODULE=on
+
 OUTPUT ?= .
 
 build: build-action build-filter
 
 build-action:
-	go build -o $(OUTPUT)/action ./cmd/action
+	go build -o $(OUTPUT)/action rectangle/cmd/action
 
 build-filter:
-	go build -o $(OUTPUT)/filter ./cmd/filter
+	go build -o $(OUTPUT)/filter rectangle/cmd/filter
