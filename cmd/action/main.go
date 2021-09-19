@@ -4,17 +4,16 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"sync"
+	"time"
 )
 
 const (
-	scriptTemplate = `tell application "System Events" to tell process "Rectangle"
-	ignoring application responses
-		click menu bar item 1 of menu bar 2
-	end ignoring
+	script1 = `tell application "System Events" to tell process "Rectangle"
+	click menu bar item 1 of menu bar 2
 end tell
-
-delay 0.5
-do shell script "killall System\\ Events"
+`
+	script2Template = `do shell script "killall System\\ Events"
 tell application "System Events" to tell process "Rectangle"
 	tell menu bar item 1 of menu bar 2
 		click menu item "%s" of menu 1
@@ -24,8 +23,20 @@ end tell
 )
 
 func main() {
+	wg := sync.WaitGroup{}
+	wg.Add(2)
 	option := os.Args[1]
-	script := fmt.Sprintf(scriptTemplate, option)
-	cmd := exec.Command("osascript", "-e", script)
-	_ = cmd.Run()
+	script2 := fmt.Sprintf(script2Template, option)
+	cmd1 := exec.Command("osascript", "-e", script1)
+	cmd2 := exec.Command("osascript", "-e", script2)
+	go func() {
+		_ = cmd1.Run()
+		wg.Done()
+	}()
+	go func() {
+		time.Sleep(250 * time.Millisecond)
+		_ = cmd2.Run()
+		wg.Done()
+	}()
+	wg.Wait()
 }
