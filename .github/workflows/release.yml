@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags: [ '*' ]
+
+jobs:
+  release:
+    runs-on: macos-12
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.5'
+
+      - name: Build
+        run: make build
+
+      - name: Package
+        uses: vimtor/action-zip@v1
+        with:
+          files: filter-arm filter-amd info.plist icon.png
+          dest: Rectangle.alfredworkflow
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Rectangle.alfredworkflow
