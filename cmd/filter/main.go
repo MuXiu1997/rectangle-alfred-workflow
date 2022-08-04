@@ -41,8 +41,8 @@ func run() {
 		"最大化":   "maximize",
 		"接近最大化": "almostMaximize",
 		"最大化高度": "maximizeHeight",
-		"缩小":    "makeSmaller",
-		"放大":    "makeLarger",
+		"缩小":    "smaller",
+		"放大":    "larger",
 		"中央":    "center",
 		"恢复":    "restore",
 
