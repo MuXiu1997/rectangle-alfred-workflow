@@ -1,18 +1,22 @@
 package main
 
 import (
+	"strings"
+
 	pinyin2 "github.com/mozillazg/go-pinyin"
 )
 
-func toPinyinKey(s string) string {
-	k := ""
-	for _, c := range s {
-		pinyin := pinyin2.LazyPinyin(string(c), pinyin2.NewArgs())
+func toPinyinKey(str string) string {
+	strBuilder := strings.Builder{}
+	for _, r := range str {
+		char := string(r)
+		pinyin := pinyin2.LazyPinyin(char, pinyin2.NewArgs())
+		// Non-Chinese char
 		if len(pinyin) == 0 {
-			k += string(c)
+			strBuilder.WriteString(char)
 		} else {
-			k += pinyin[0][:1]
+			strBuilder.WriteString(pinyin[0][:1])
 		}
 	}
-	return k
+	return strBuilder.String()
 }

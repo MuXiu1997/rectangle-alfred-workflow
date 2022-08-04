@@ -1,4 +1,3 @@
-.PHONY: ;
 .SILENT: ;               # no need for @
 .ONESHELL: ;             # recipes execute in same shell
 .NOTPARALLEL: ;          # wait for target to finish
@@ -8,10 +7,17 @@ export GO111MODULE=on
 
 OUTPUT ?= .
 
-build: build-action build-filter
+.PHONY: build
+build: build-filter
 
-build-action:
-	go build -o $(OUTPUT)/action rectangle/cmd/action
+.PHONY: build-filter
+build-filter: build-filter-arm build-filter-amd
 
-build-filter:
-	go build -o $(OUTPUT)/filter rectangle/cmd/filter
+
+.PHONY: build-filter-arm
+build-filter-arm:
+	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o ${OUTPUT}/filter-arm rectangle/cmd/filter
+
+.PHONY: build-filter-amd
+build-filter-amd:
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o ${OUTPUT}/filter-amd rectangle/cmd/filter
