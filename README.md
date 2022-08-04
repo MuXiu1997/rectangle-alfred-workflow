@@ -4,6 +4,11 @@
 
 
 
+
+https://user-images.githubusercontent.com/49554020/182882290-efcf33cc-4aa1-4c23-81f9-b368a26d5c0e.mp4
+
+
+
 ## 实现原理
 
 1. 将 `Rectangle` 的所有快捷键清空
