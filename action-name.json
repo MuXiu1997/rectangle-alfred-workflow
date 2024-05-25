@@ -1,0 +1,158 @@
+[
+  {
+    "name": "left-half",
+    "name-zh": "左半屏"
+  },
+  {
+    "name": "right-half",
+    "name-zh": "右半屏"
+  },
+  {
+    "name": "center-half",
+    "name-zh": "中间半屏"
+  },
+  {
+    "name": "top-half",
+    "name-zh": " 上半屏"
+  },
+  {
+    "name": "bottom-half",
+    "name-zh": "下半屏"
+  },
+  {
+    "name": "top-left",
+    "name-zh": "左上"
+  },
+  {
+    "name": "top-right",
+    "name-zh": "右上"
+  },
+  {
+    "name": "bottom-left",
+    "name-zh": "左下"
+  },
+  {
+    "name": "bottom-right",
+    "name-zh": "右下"
+  },
+  {
+    "name": "maximize",
+    "name-zh": "最大化"
+  },
+  {
+    "name": "almost-maximize",
+    "name-zh": "接近最大化"
+  },
+  {
+    "name": "maximize-height",
+    "name-zh": "最大化高度"
+  },
+  {
+    "name": "smaller",
+    "name-zh": "缩小"
+  },
+  {
+    "name": "larger",
+    "name-zh": "放大"
+  },
+  {
+    "name": "center",
+    "name-zh": "中间"
+  },
+  {
+    "name": "restore",
+    "name-zh": "恢复"
+  },
+  {
+    "name": "next-display",
+    "name-zh": "下一个显示器"
+  },
+  {
+    "name": "previous-display",
+    "name-zh": "上一个显示器"
+  },
+  {
+    "name": "first-third",
+    "name-zh": "左首1 / 3"
+  },
+  {
+    "name": "center-third",
+    "name-zh": "中间1 / 3"
+  },
+  {
+    "name": "last-third",
+    "name-zh": "右首1 / 3"
+  },
+  {
+    "name": "first-two-thirds",
+    "name-zh": "左侧2 / 3"
+  },
+  {
+    "name": "last-two-thirds",
+    "name-zh": "右侧2 / 3"
+  },
+  {
+    "name": "first-fourth",
+    "name-zh": "左首1 / 4"
+  },
+  {
+    "name": "second-fourth",
+    "name-zh": "左二1 / 4"
+  },
+  {
+    "name": "third-fourth",
+    "name-zh": "右二1 / 4"
+  },
+  {
+    "name": "last-fourth",
+    "name-zh": "右侧1 / 4"
+  },
+  {
+    "name": "first-three-fourths",
+    "name-zh": "左侧3 / 4"
+  },
+  {
+    "name": "last-three-fourths",
+    "name-zh": "右侧3 / 4"
+  },
+  {
+    "name": "move-left",
+    "name-zh": "向左移动"
+  },
+  {
+    "name": "move-right",
+    "name-zh": "向右移动"
+  },
+  {
+    "name": "move-up",
+    "name-zh": "向上移动"
+  },
+  {
+    "name": "move-down",
+    "name-zh": "向下移动"
+  },
+  {
+    "name": "top-left-sixth",
+    "name-zh": "左上1 / 6"
+  },
+  {
+    "name": "top-center-sixth",
+    "name-zh": "中上1 / 6"
+  },
+  {
+    "name": "top-right-sixth",
+    "name-zh": "右上1 / 6"
+  },
+  {
+    "name": "bottom-left-sixth",
+    "name-zh": "左下1 / 6"
+  },
+  {
+    "name": "bottom-center-sixth",
+    "name-zh": "中下1 / 6"
+  },
+  {
+    "name": "bottom-right-sixth",
+    "name-zh": "右下1 / 6"
+  }
+]

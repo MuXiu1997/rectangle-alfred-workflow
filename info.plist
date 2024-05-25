@@ -9,62 +9,12 @@
 	<key>connections</key>
 	<dict>
 		<key>42F7F8B7-D965-4D0E-9AB1-DA3798D19F8D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5237CB02-18C8-4EF8-9494-447585575008</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>4B2CEB50-A4B4-40D8-9630-A29E19B41A29</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>D5CC33D7-263C-4ACD-B7D0-298FFFC97656</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5237CB02-18C8-4EF8-9494-447585575008</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FDFD424B-FFC5-4461-A47E-944238CC90AE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>91DE5892-795E-495E-A58B-8CB00D8CDC66</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>42F7F8B7-D965-4D0E-9AB1-DA3798D19F8D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>FDFD424B-FFC5-4461-A47E-944238CC90AE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4B2CEB50-A4B4-40D8-9630-A29E19B41A29</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -84,79 +34,6 @@
 	<string>Rectangle</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>\</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1966080</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>FDFD424B-FFC5-4461-A47E-944238CC90AE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>action=$1
-
-defaults write com.knollsoft.Rectangle $action -dict</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>D5CC33D7-263C-4ACD-B7D0-298FFFC97656</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>action=$1
-
-defaults write com.knollsoft.Rectangle $action -dict keyCode -int 42 modifierFlags -int 1966080
-
-echo $action</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>42F7F8B7-D965-4D0E-9AB1-DA3798D19F8D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -190,7 +67,8 @@ if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
     ./filter-arm {query}
 else
     ./filter-amd {query}
-fi</string>
+fi
+</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -214,28 +92,27 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>0.1</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>action=$1
+
+open -g "rectangle://execute-action?name=${action}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>5237CB02-18C8-4EF8-9494-447585575008</string>
+			<string>42F7F8B7-D965-4D0E-9AB1-DA3798D19F8D</string>
 			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>0.1</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>4B2CEB50-A4B4-40D8-9630-A29E19B41A29</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -249,38 +126,10 @@ fi</string>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
-		<key>4B2CEB50-A4B4-40D8-9630-A29E19B41A29</key>
-		<dict>
-			<key>xpos</key>
-			<real>650</real>
-			<key>ypos</key>
-			<real>45</real>
-		</dict>
-		<key>5237CB02-18C8-4EF8-9494-447585575008</key>
-		<dict>
-			<key>xpos</key>
-			<real>380</real>
-			<key>ypos</key>
-			<real>45</real>
-		</dict>
 		<key>91DE5892-795E-495E-A58B-8CB00D8CDC66</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
-			<key>ypos</key>
-			<real>15</real>
-		</dict>
-		<key>D5CC33D7-263C-4ACD-B7D0-298FFFC97656</key>
-		<dict>
-			<key>xpos</key>
-			<real>745</real>
-			<key>ypos</key>
-			<real>15</real>
-		</dict>
-		<key>FDFD424B-FFC5-4461-A47E-944238CC90AE</key>
-		<dict>
-			<key>xpos</key>
-			<real>475</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
