@@ -6,20 +6,23 @@ on:
 
 jobs:
   release:
-    runs-on: macos-12
+    runs-on: macos-14
     permissions:
       contents: write
     steps:
+      - name: Setup Just
+        uses: extractions/setup-just@v2
+
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
-          go-version: '1.18.5'
+          go-version: '1.22'
 
       - name: Build
-        run: make build
+        run: just build
 
       - name: Package
         uses: vimtor/action-zip@v1
