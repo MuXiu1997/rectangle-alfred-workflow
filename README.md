@@ -11,15 +11,17 @@ https://user-images.githubusercontent.com/49554020/182882290-efcf33cc-4aa1-4c23-
 
 ## 实现原理
 
-1. 将 `Rectangle` 的所有快捷键清空
+~~1. 将 `Rectangle` 的所有快捷键清空~~
 
-2. 实现一个 `filter` 将 `Alfred` 中输入的拼音转化为 `Rectangle` 的动作 ID
+~~2. 实现一个 `filter` 将 `Alfred` 中输入的拼音转化为 `Rectangle` 的动作 ID~~
 
-3. 使用 `defaults write` 为该动作设置一个不常用的快捷键
+~~3. 使用 `defaults write` 为该动作设置一个不常用的快捷键~~
 
-4. 使用 `Alfred` 调用该快捷键
+~~4. 使用 `Alfred` 调用该快捷键~~
 
-5. 再次使用 `defaults write` 清空该动作的快捷键
+~~5. 再次使用 `defaults write` 清空该动作的快捷键~~
+
+参考: [Rectangle - Execute an action by URL](https://github.com/rxhanson/Rectangle#execute-an-action-by-url)
 
 
 
